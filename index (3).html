@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElectroReck | Techspardha Events</title>
+  <meta name="description" content="ElectroReck, the electrical engineering club of NIT Kurukshetra. Events at Techspardha '25-26.">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a href="#top" class="logo"><img src="images/logo.png" alt="" width="36" height="36"> ElectroReck</a>
+    <nav aria-label="Main">
+      <a href="#events">Events</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-logo" src="images/logo.png" alt="ElectroReck logo" width="180" height="180">
+      <div class="hero-text">
+        <p class="eyebrow">NIT Kurukshetra &bull; Techspardha '25-26</p>
+        <h1>Electro<span>Reck</span></h1>
+        <p>The club for electrical students who like to design, build and compete. Four events are open this Techspardha. Pick yours and register.</p>
+        <a class="btn" href="#events">See events</a>
+      </div>
+    </section>
+
+    <section id="events" class="events">
+      <div class="events-head">
+        <h2>Our events</h2>
+        <div class="filters" role="group" aria-label="Filter events by category">
+          <button class="chip active" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="Technical" aria-pressed="false">Technical</button>
+          <button class="chip" data-filter="Creative" aria-pressed="false">Creative</button>
+          <button class="chip" data-filter="Academic" aria-pressed="false">Academic</button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid">
+        <article class="card" data-category="Technical" data-title="Electrica">
+          <img src="images/electrica.jpg" alt="Electrica event poster" loading="lazy">
+          <div class="card-body">
+            <span class="badge">Technical</span>
+            <h3>Electrica</h3>
+            <p class="meta"><time datetime="2025-10-26T15:00">26 Oct 2025, 3:00 PM</time></p>
+            <p class="venue">EE Department &bull; Prize worth &#8377;2,000</p>
+            <p class="desc">Where sparks turn into innovation. Put your electrical knowledge to work.</p>
+            <button class="btn register" type="button">Register</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="Academic" data-title="UPSC Challenge">
+          <img src="images/upsc.jpg" alt="UPSC Challenge event poster" loading="lazy">
+          <div class="card-body">
+            <span class="badge">Academic</span>
+            <h3>UPSC Challenge</h3>
+            <p class="meta"><time datetime="2025-10-28T11:00">28 Oct 2025, 11:00 AM</time></p>
+            <p class="venue">Room E-201 &bull; Prize worth &#8377;5,000</p>
+            <p class="desc">A showdown of wits with Dr Amit Academy.</p>
+            <button class="btn register" type="button">Register</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="Technical" data-title="Digi Spark">
+          <img src="images/digispark.jpg" alt="Digi Spark event poster" loading="lazy">
+          <div class="card-body">
+            <span class="badge">Technical</span>
+            <h3>Digi Spark</h3>
+            <p class="meta"><time datetime="2025-10-28T15:00">28 Oct 2025, 3:00 PM</time></p>
+            <p class="venue">EE Department &bull; Prize worth &#8377;2,000</p>
+            <p class="desc">Are you interested in designing electronic circuits? Show it here.</p>
+            <button class="btn register" type="button">Register</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="Creative" data-title="Advanza">
+          <img src="images/advanza.jpg" alt="Advanza event poster" loading="lazy">
+          <div class="card-body">
+            <span class="badge">Creative</span>
+            <h3>Advanza</h3>
+            <p class="meta"><time datetime="2025-10-29">From 29 Oct 2025</time></p>
+            <p class="venue">Time to be announced &bull; Prize worth &#8377;2,000</p>
+            <p class="desc">Can your reel sell a deal? Showcase your marketing skills.</p>
+            <button class="btn register" type="button">Register</button>
+          </div>
+        </article>
+      </div>
+      <p id="empty" class="empty" hidden>No events in this category yet. Check back soon.</p>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About ElectroReck</h2>
+      <p>ElectroReck is the electrical engineering club of NIT Kurukshetra. Every Techspardha we run contests that mix circuits, ideas and a bit of competition. Follow us on Instagram @ereck_nitkkr and Facebook @electroreck.nitk.</p>
+    </section>
+  </main>
+
+  <footer><p>&copy; ElectroReck, NIT Kurukshetra</p></footer>
+
+  <dialog id="modal" aria-labelledby="modal-title">
+    <form id="reg-form" novalidate>
+      <button type="button" class="close" id="close" aria-label="Close registration form">&times;</button>
+      <h2 id="modal-title">Register</h2>
+      <p class="modal-event" id="modal-event"></p>
+
+      <label for="name">Full name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+      <small class="error" data-for="name"></small>
+
+      <label for="roll">Roll number</label>
+      <input id="roll" name="roll" type="text" required>
+      <small class="error" data-for="roll"></small>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+      <small class="error" data-for="email"></small>
+
+      <label for="phone">Phone (10 digits)</label>
+      <input id="phone" name="phone" type="tel" inputmode="numeric" required>
+      <small class="error" data-for="phone"></small>
+
+      <label for="year">Year of study</label>
+      <select id="year" name="year" required>
+        <option value="">Select year</option>
+        <option>1st year</option><option>2nd year</option><option>3rd year</option><option>4th year</option>
+      </select>
+      <small class="error" data-for="year"></small>
+
+      <button class="btn" type="submit">Confirm registration</button>
+    </form>
+
+    <div id="success" class="success" hidden>
+      <h2>You're registered</h2>
+      <p id="success-msg"></p>
+      <button class="btn" type="button" id="done">Done</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
